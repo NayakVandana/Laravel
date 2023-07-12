@@ -6,14 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
-    // function show()
-    // {
-    //     return "Hello from controller";
+    // function loadview(){
+    //     return view('users');
     // }
-    function show($id)
-    {
-        return $id;
+    function loadview($user){
+        return view('users',['user'=>$user]);
     }
 
 }
