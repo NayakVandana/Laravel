@@ -1,4 +1,9 @@
-<h1>Users</h1>
-@foreach ($users as $user)
-<h6>{{$user}}</h6>
-@endforeach
+<h1>User Login</h1>
+<form action="users" method="POST">
+      @csrf
+      <input type="text" name="username" placeholder="enter user id"/>
+      <br><br>
+      <input type="password" name="password" placeholder="enter user password"/>
+      <br><br>
+      <button type="submit">Login</button>
+</form>
