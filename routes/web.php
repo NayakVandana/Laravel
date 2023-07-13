@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view("home",'home');
-Route::view("users",'users')->middleware('protectedPage');
-Route::view("noaccess",'noaccess');
+Route::get("users",[UserController::class,'index']);
+
 
 
 
