@@ -17,9 +17,9 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get("users",[UserController::class,'loadview']);
-Route::post("users",[UsersController::class,'getData']);
-Route::view("login",'users');
+
+Route::view("users",'users');
+Route::view("noaccess",'noaccess');
 
 
 
