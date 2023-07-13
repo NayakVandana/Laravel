@@ -19,11 +19,9 @@ Route::get('/', function () {
 });
 
 Route::view("home",'home');
+Route::view("users",'users')->middleware('protectedPage');
 Route::view("noaccess",'noaccess');
 
-Route::group(['middleware'=>['protectPage']],function(){
-    Route::view("users",'users');
-});
 
 
 
