@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view("users",'users');
+Route::view("home",'home');
 Route::view("noaccess",'noaccess');
+
+Route::group(['middleware'=>['protectPage']],function(){
+    Route::view("users",'users');
+});
 
 
 
