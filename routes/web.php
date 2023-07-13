@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("users",[UserController::class,'index']);
+Route::view("login","users");
+// Route::get("users",[UserController::class,'testRequest']);
+// Route::post("users",[UserController::class,'testRequest']);
+// Route::put("users",[UserController::class,'testRequest']);
+Route::delete("users",[UserController::class,'testRequest']);
 
 
 
