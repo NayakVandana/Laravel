@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController; 
 // use App\Http\Controllers\UserAuth; 
 // use App\Http\Controllers\StoreController; 
 // use App\Http\Controllers\UploadController; 
-use App\Http\Controllers\MembersController;
+// use App\Http\Controllers\MembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ use App\Http\Controllers\MembersController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('list',[MembersController::class,'operations']);
+Route::get('list',[UserController::class,'operations']);
 
 
 

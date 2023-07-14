@@ -1,5 +1,7 @@
 
-<table border="1">
+<h1>List page</h1>
+
+<!-- <table border="1">
 
     @foreach($data as $item)
     <tr>
@@ -9,4 +11,4 @@
          <td>{{ $item->address}}</td>
     </tr>
     @endforeach
-</table>
+</table> -->
