@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UserController; 
 // use App\Http\Controllers\UserAuth; 
-use App\Http\Controllers\StoreController; 
+// use App\Http\Controllers\StoreController; 
+use App\Http\Controllers\UploadController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::get('/', function () {
 });
 
 
-Route::view('store','storeuser');
-Route::post("storecontroller",[StoreController::class,'storeM']);
+Route::view('upload','upload');
+Route::post("upload",[UploadController::class,'index']);
 
 
 
