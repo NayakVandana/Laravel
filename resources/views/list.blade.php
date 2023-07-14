@@ -16,3 +16,11 @@
     </tr>
     @endforeach
 </table>
+<div>
+    {{$members->links()}}
+</div>
+<style>
+ .w-5{
+     display:none;
+    }
+</style>
