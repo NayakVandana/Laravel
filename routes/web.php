@@ -21,8 +21,8 @@ use App\Http\Controllers\MembersController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('add','addmember');
-Route::post('add',[MembersController::class,'addData']);
+Route::get('list',[MembersController::class,'list']);
+Route::get('delete/{id}',[MembersController::class,'delete']);
 
 
 

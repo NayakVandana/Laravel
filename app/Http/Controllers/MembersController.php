@@ -8,13 +8,15 @@ use App\Models\Member;
 class MembersController extends Controller
 {
     //
-    function addData(Request $req)
+    function list()
     {
-        $member=new Member;
-        $member->name=$req->name;
-        $member->email=$req->email;
-        $member->address=$req->address;
-        $member->save();
-        return redirect('add');
+        $data=Member::all();
+        return view('list',['members'=>$data]);
+    }
+    function delete($id)
+    {
+        $data=Member::find($id);
+        $data->delete();
+        return redirect('list');
     }
 }
