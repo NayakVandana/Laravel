@@ -22,8 +22,15 @@ Route::get('/', function () {
 });
 
 
-Route::view('upload','upload');
-Route::post("upload",[UploadController::class,'index']);
+// Route::get('/profile',function(){
+//     return view('profile');
+// })
+
+Route::get('/profile/{lang}',function($lang){
+    App::setlocale($lang);
+    return view('profile');
+});
+
 
 
 
