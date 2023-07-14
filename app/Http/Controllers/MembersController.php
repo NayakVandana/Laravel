@@ -3,34 +3,68 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Member;
+use Illuminate\Support\Facades\DB;
 
 class MembersController extends Controller
 {
     //
-    function list()
+    function operations()
     {
-        $data=Member::all();
-        return view('list',['members'=>$data]);
-    }
-    function delete($id)
-    {
-        $data=Member::find($id);
-        $data->delete();
-        return redirect('list');
-    }
-    function showData($id)
-    {
-        $data = Member::find($id);
-        return view('edit',['data'=>$data]);
-    }
-    function update(Request $req)
-    {
-        $data=Member::find($req->$id);
-        $data->name=$req->name;
-        $data->address=$req->address;
-        $data->email=$req->email;
-        $data->save();
-        return redirect('list');
-    }
+         
+
+        // ** get data
+
+
+        //echo "code will be here";
+        // $data= DB::table('members')->get();
+        // return view('list',['data'=>$data]);
+      
+
+        //** only 4 id data get data
+        // return DB::table('members')
+        // ->where('id',4)->get();  
+        
+        // return DB::table('members')
+        // ->where('address','vapi')->get();
+
+
+        //** find data
+
+        // return (array)DB::table('members')->find(4);
+
+
+        //** count data
+
+        //return (array)DB::table('members')->count();
+
+
+
+        //** insert data
+
+        // return DB::table('members')
+        // ->insert([
+        //    'name'=>'ruhi',
+        //    'email'=>'ruhi@gmail.com',
+        //    'address'=>'vapi',
+        // ]);
+
+
+
+        //** Update data
+
+        // return DB::table('members')
+        // ->where('id',4)
+        // ->update([
+        //    'name'=>'ruhi medam',
+        //    'email'=>'ruhi@gmail.com',
+        //    'address'=>'vapi',
+        // ]);
+
+
+
+        //** Update data
+
+        return DB::table('members')
+        ->where('id',4)->delete();
+    } 
 }
