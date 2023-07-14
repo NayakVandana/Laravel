@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UserAuth; 
 // use App\Http\Controllers\StoreController; 
 // use App\Http\Controllers\UploadController; 
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,8 @@ use App\Http\Controllers\MemberController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('list',[MemberController::class,'show']);
+Route::view('add','addmember');
+Route::post('add',[MembersController::class,'addData']);
 
 
 
