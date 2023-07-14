@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
-use App\Http\Controllers\UserAuth; 
+// use App\Http\Controllers\UserController; 
+// use App\Http\Controllers\UserAuth; 
+use App\Http\Controllers\StoreController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -19,24 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('profile','profile');
-Route::get('/logout', function () {
-    if(session()->has('user'))
-    {
-        session()->pull('user',null);
-    }
-    return redirect('login');
-});
 
-Route::get('/login', function () {
-    if(session()->has('user'))
-    {
-        return redirect('profile');
-    }
-    return view('login');
-});
-
-Route::post("user",[UserAuth::class,'userLogin']);
+Route::view('store','storeuser');
+Route::post("storecontroller",[StoreController::class,'storeM']);
 
 
 
