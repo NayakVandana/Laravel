@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UserController; 
 // use App\Http\Controllers\UserAuth; 
 // use App\Http\Controllers\StoreController; 
-use App\Http\Controllers\UploadController; 
+// use App\Http\Controllers\UploadController; 
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +21,8 @@ use App\Http\Controllers\UploadController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('list',[MemberController::class,'show']);
 
-
-// Route::get('/profile',function(){
-//     return view('profile');
-// })
-
-Route::get('/profile/{lang}',function($lang){
-    App::setlocale($lang);
-    return view('profile');
-});
 
 
 
