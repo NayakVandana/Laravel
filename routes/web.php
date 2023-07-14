@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserAuth; 
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view("login","users");
-// Route::get("users",[UserController::class,'testRequest']);
-// Route::post("users",[UserController::class,'testRequest']);
-// Route::put("users",[UserController::class,'testRequest']);
-Route::delete("users",[UserController::class,'testRequest']);
+Route::view('profile','profile');
+Route::get('/logout', function () {
+    if(session()->has('user'))
+    {
+        session()->pull('user',null);
+    }
+    return redirect('login');
+});
+
+Route::get('/login', function () {
+    if(session()->has('user'))
+    {
+        return redirect('profile');
+    }
+    return view('login');
+});
+
+Route::post("user",[UserAuth::class,'userLogin']);
+
 
 
 
