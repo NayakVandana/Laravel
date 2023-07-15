@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
-use App\Http\Controllers\EmployeeController; 
+// use App\Http\Controllers\UserController; 
+// use App\Http\Controllers\EmployeeController; 
 // use App\Http\Controllers\UserAuth; 
 // use App\Http\Controllers\StoreController; 
 // use App\Http\Controllers\UploadController; 
-// use App\Http\Controllers\MembersController;
+use App\Http\Controllers\MembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('list',[Empl::class,'getData']);
+Route::get('data',[MembersController::class,'index']);
 
 
 
