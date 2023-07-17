@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("list",[DeviceController::class,'list']); //http://127.0.0.1:8000/api/data
+Route::get("list/{id?}",[DeviceController::class,'list']); //http://127.0.0.1:8000/api/data
