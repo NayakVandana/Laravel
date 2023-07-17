@@ -7,9 +7,9 @@ use App\Models\Device;
 class DeviceController extends Controller
 {
     //
-    function index(Device $key)
+    function list()
     {
-        // return $key;
-        return $key->all();
+        return Device::all();
+       
     }
 }
