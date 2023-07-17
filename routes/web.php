@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\StoreController; 
 // use App\Http\Controllers\UploadController; 
 //use App\Http\Controllers\MembersController;
-use App\Http\Controllers\DeviceController;
+// use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +23,7 @@ use App\Http\Controllers\DeviceController;
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::get('device/{key}',[DeviceController::class,'index']);
-// Route::get('device/{key:name}',[DeviceController::class,'index']);
-Route::get('device/{key:member_id}',[DeviceController::class,'index']);
+
 
 
 
