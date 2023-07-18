@@ -7,9 +7,20 @@ use App\Models\Device;
 class DeviceController extends Controller
 {
     //
-    function list($id=null)
+    function add(Request $req)
     {
-        return $id?Device::find($id):Device::all();
+        $device = new Device;
+        $device->name=$req->name;
+        $device->member_id=$req->member_id;
+        $result=$device->save();
+        if($result)
+        {
+            return ["result"=>"Data has been saved"];
+        }
+        else{
+            return ["result"=>"faild"];
+        }
+        
        
     }
 }
