@@ -54,4 +54,12 @@ class DeviceController extends Controller
         }
         
     }
+
+    function search($name){
+       
+       // return Device::where("name",$name)->get();
+
+       //character base search
+       return Device::where("name","like","%".$name."%")->get();
+    }
 }
