@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post("add",[DeviceController::class,'add']); //http://127.0.0.1:8000/api/data
+Route::put("update",[DeviceController::class,'update']); 
